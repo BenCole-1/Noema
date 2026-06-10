@@ -21,12 +21,14 @@ app.use('/anthropic', (req, res) => {
     method: req.method,
     headers: {
       'content-type': 'application/json',
+      'content-length': req.headers['content-length'],
       'x-api-key': apiKey,
       'anthropic-version': req.headers['anthropic-version'] || '2023-06-01',
     },
   }
 
   const proxy = https.request(options, (apiRes) => {
+    console.log(`Anthropic API responded: ${apiRes.statusCode}`)
     res.status(apiRes.statusCode)
     apiRes.pipe(res)
   })
