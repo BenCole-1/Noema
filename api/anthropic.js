@@ -1,6 +1,6 @@
-import https from 'https'
+const https = require('https')
 
-export default function handler(req, res) {
+module.exports = function handler(req, res) {
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) {
     return res.status(500).json({ error: 'ANTHROPIC_API_KEY not configured on server.' })
