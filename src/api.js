@@ -62,14 +62,14 @@ export async function analyzeItems(items) {
       max_tokens: 1024,
       messages: [{ role: 'user', content: buildPrompt(items) }],
     })
-    return JSON.parse(text)
+    return parseJSON(text)
   } catch (err) {
     if (text !== undefined) {
       const retry = await post({
         max_tokens: 1024,
         messages: [{ role: 'user', content: buildPrompt(items) }],
       })
-      return JSON.parse(retry)
+      return parseJSON(retry)
     }
     throw err
   }
