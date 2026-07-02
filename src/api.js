@@ -94,7 +94,7 @@ Return ONLY valid JSON:
     max_tokens: 512,
     messages: [{ role: 'user', content: prompt }],
   })
-  return JSON.parse(text)
+  return parseJSON(text)
 }
 
 export async function getChatResponse({
@@ -138,7 +138,7 @@ Return ONLY valid JSON:
     max_tokens: 512,
     messages: [{ role: 'user', content: prompt }],
   })
-  return JSON.parse(text)
+  return parseJSON(text)
 }
 
 export async function getTension(itemA, itemB) {
@@ -157,7 +157,7 @@ Be specific and surprising. Avoid generic observations.`
     max_tokens: 512,
     messages: [{ role: 'user', content: prompt }],
   })
-  return JSON.parse(text)
+  return parseJSON(text)
 }
 
 export async function generateMap(concept) {
