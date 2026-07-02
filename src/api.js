@@ -25,7 +25,7 @@ Rules:
 }
 
 async function post(body) {
-  const response = await fetch('/anthropic/v1/messages', {
+  const response = await fetch('/api/anthropic', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

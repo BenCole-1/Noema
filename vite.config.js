@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/anthropic': {
+      '/api/anthropic': {
         target: 'https://api.anthropic.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/anthropic/, ''),
+        rewrite: () => '/v1/messages',
         configure: (proxy) => {
           proxy.on('proxyReq', (proxyReq) => {
             proxyReq.removeHeader('origin')
