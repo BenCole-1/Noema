@@ -968,7 +968,7 @@ function MapMode({
             </div>
           ) : (
             <div className="map-entry-inner">
-              <h2 className="map-entry-title">Map a concept :)</h2>
+              <h2 className="map-entry-title">Map a concept</h2>
               <input
                 ref={entryInputRef}
                 className="map-entry-input"
