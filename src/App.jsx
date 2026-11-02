@@ -193,7 +193,7 @@ export default function App() {
   // { type: 'term'|'group', label: string, groupLabel: string }
 
   // ── Mode toggle ──
-  const [view, setView] = useState('explore') // 'explore' | 'map'
+  const [view, setView] = useState('map') // 'map' | 'explore'
 
   // ── Map Mode state ──
   const [mapMode, setMapMode] = useState('entry') // 'entry' | 'map'
@@ -398,16 +398,16 @@ export default function App() {
         <Logo />
         <div className="mode-toggle">
           <button
-            className={`mode-tab ${view === 'explore' ? 'mode-tab--active' : ''}`}
-            onClick={() => setView('explore')}
-          >
-            Explore
-          </button>
-          <button
             className={`mode-tab ${view === 'map' ? 'mode-tab--active' : ''}`}
             onClick={() => setView('map')}
           >
             Map
+          </button>
+          <button
+            className={`mode-tab ${view === 'explore' ? 'mode-tab--active' : ''}`}
+            onClick={() => setView('explore')}
+          >
+            Explore
           </button>
         </div>
       </div>
